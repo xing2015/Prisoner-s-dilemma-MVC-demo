@@ -43,7 +43,7 @@ public class Partie extends Observable{
     }
 
     public int GetNbCoup() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return NbCoup;
     }
 
         public void Cooperer(boolean choixA,boolean choixB) {

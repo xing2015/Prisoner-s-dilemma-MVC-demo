@@ -7,20 +7,28 @@
 package C;
 
 import M.Partie;
-import java.util.Observer;
+
 
 /**
  *
  * @author Administrator
  */
-public class PanelCoup extends javax.swing.JPanel implements Observer {
+public class PanelCoup extends javax.swing.JPanel {
     Partie partie;
     /**
      * Creates new form PanelCoup
      */
     public PanelCoup() {
+        this.partie = new Partie();
         initComponents();
     }
+    
+    public void setPanelCoup(Partie p){
+        partie =p;
+    }
+   /* public void setPanelCoup(Partie p){
+        partie = p;      
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,11 +139,14 @@ public class PanelCoup extends javax.swing.JPanel implements Observer {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         partie.Cooperer(false,false);
+        
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // CC
         partie.Cooperer(true,true);
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -149,6 +160,7 @@ public class PanelCoup extends javax.swing.JPanel implements Observer {
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
