@@ -6,72 +6,123 @@
 
 package M;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 /**
  *
- * @author Administrator
+ * @author xym
  */
 public class Partie extends Observable{
-
+    List<boolean[]> Choix;
+    Gain gain;
+    
+  
+    public Partie(){
+        this(new Gain());
+       
+    }
+    
+    public Partie(Gain g){
+        Choix = new ArrayList<boolean[]>();   
+        gain=g;
+        setChanged();
+        notifyObservers(); 
+    }
+    
+      /**
+     * Cette méthode enregistre les choix de deux joueurs.
+     * @param ChoixA:choix de joueur A de quel coup.
+     * @param ChoixB:choix de joueur B de quel coup.
+     */
+     public void Cooperer(boolean ChoixA,boolean ChoixB) {
+      
+        boolean[] ChoixTmp= new boolean[2];
+        ChoixTmp[0]=ChoixA;
+        ChoixTmp[1]=ChoixB;
+        Choix.add(ChoixTmp);
+        setChanged();
+        notifyObservers(this);
+      
+    }
+  
+  
+     /**
+     * Cette méthode retourne le gain pour joueur j au coup numéro coup.
+     * @param j: joueur
+     * @param coup: numéro de coup
+     * @return gainTmp: gain 
+     */
+     public int getGainParCoup(Joueur j,int coup){
+        int gainTmp=gain.calcul(j,Choix.get(coup)[0],Choix.get(coup)[1]);     
+        return gainTmp;      
+    }
+      /**
+     * Cette méthode retourne le nombre de coup.
+     * @return 
+     */
+    public int GetNbCoup() {
+        return Choix.size();
+    }
     /**
-     * @param args the command line arguments
+     * Cette méthode retourne le score pour joueur j.
+     * @param j: joueur
+     * @return 
+     */
+    public int getScore(Joueur j){
+        int score=0;
+        for(int i=0;i<Choix.size();i++){
+                score+=getGainParCoup(j,i);
+        }
+        return score;
+    }
+    
+    
+      /**
+     * Cette méthode retourne l'ensemble de choix.
+     * @return 
+     */
+    public List<boolean[]> getChoix() {
+        return Choix;
+    }
+    public void setChoix(List<boolean[]> choix){
+        this.Choix=choix;
+    }
+   
+    public Gain getGain() {
+        return gain;
+    }
+    
+    
+
+   /* @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
-     int NbCoup;
-     int ScoreA;
-     int ScoreB;
-     int GainA;
-     int GainB;
-
-    public int getScoreA() {
-        return ScoreA;
-    }
-
-    public int getScoreB() {
-        return ScoreB;
-    }
-
-    public int getGainA() {
-        return GainA;
-    }
-
-    public int getGainB() {
-        return GainB;
-    }
-
-    public int GetNbCoup() {
-        return NbCoup;
-    }
-
-        public void Cooperer(boolean choixA,boolean choixB) {
-      
-        if(choixA && choixB){
-            this.GainA=3;
-            this.GainB=3;
-        }
-        else if(choixA &&!choixB){
-            this.GainA=0;
-            this.GainB=5;
-         }
-        else if(!choixA &&choixB){
-            this.GainA=5;
-            this.GainB=0;
-         }
-        else if(!choixA &&!choixB){
-            this.GainA=1;
-            this.GainB=1;
-        }
-         this.ScoreA = this.ScoreA+this.GainA;
-         this.ScoreB=this.ScoreB+this.GainB;
-        this.NbCoup++;
-        setChanged();
-        notifyObservers(this);
     }
 
     }
 
    
+    
+ /* if(ChoixA && ChoixB){
+            this.GainA=3;
+            this.GainB=3;
+        }
+        else if(ChoixA &&!ChoixB){
+            this.GainA=0;
+            this.GainB=5;
+         }
+        else if(!ChoixA &&ChoixB){
+            this.GainA=5;
+            this.GainB=0;
+         }
+        else if(!ChoixA &&!ChoixB){
+            this.GainA=1;
+            this.GainB=1;
+        }
+         this.ScoreA = this.ScoreA+this.GainA;
+         this.ScoreB=this.ScoreB+this.GainB;
+        this.NbCoup++;*/
     
