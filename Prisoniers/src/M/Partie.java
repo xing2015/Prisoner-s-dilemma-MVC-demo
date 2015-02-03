@@ -6,6 +6,7 @@
 
 package M;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -14,14 +15,12 @@ import java.util.Observable;
  *
  * @author xym
  */
-public class Partie extends Observable{
+public class Partie extends Observable implements Serializable{
     List<boolean[]> Choix;
     Gain gain;
-    
   
     public Partie(){
-        this(new Gain());
-       
+        this(new Gain());      
     }
     
     public Partie(Gain g){
@@ -43,7 +42,7 @@ public class Partie extends Observable{
         ChoixTmp[1]=ChoixB;
         Choix.add(ChoixTmp);
         setChanged();
-        notifyObservers(this);
+        notifyObservers();
       
     }
   
