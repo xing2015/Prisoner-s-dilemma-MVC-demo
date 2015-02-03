@@ -21,7 +21,7 @@ import M.Partie;
 
 /**
  *
- * @author DONG Xiangxiang
+ * @author xym
  */
 public class PanelHistorique extends JPanel implements Observer {
 
