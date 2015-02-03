@@ -98,9 +98,9 @@ public class PanelHistorique extends JPanel implements Observer {
                 case 0:
                     return historiques.get(rowIndex).getNbCoup();
                 case 1:
-                    return historiques.get(rowIndex).getChoixA();
+                    return historiques.get(rowIndex).getcA();
                 case 2:
-                    return historiques.get(rowIndex).getChoixB();
+                    return historiques.get(rowIndex).getcB();
                 case 3:
                     return historiques.get(rowIndex).getGainA();
                 case 4:
