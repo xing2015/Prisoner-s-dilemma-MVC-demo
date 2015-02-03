@@ -11,7 +11,7 @@ import M.Partie;
 
 /**
  *
- * @author Administrator
+ * @author xym
  */
 public class PanelCoup extends javax.swing.JPanel {
     Partie partie;
@@ -23,7 +23,7 @@ public class PanelCoup extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void setPanelCoup(Partie p){
+    public void setPartie(Partie p){
         partie =p;
     }
    /* public void setPanelCoup(Partie p){

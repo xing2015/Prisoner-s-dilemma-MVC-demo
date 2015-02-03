@@ -77,7 +77,16 @@ public class Partie extends Observable implements Serializable{
         return score;
     }
     
-    
+        /**
+     * Cette méthode retourne le choix d'un joueur au coup numéro i.
+     * @param joueur: joueur
+     * @param i:numéro de coup
+     * @return 
+     */
+    public boolean getChoixCoup(Joueur joueur, int coup) {
+            return Choix.get(coup)[joueur.getValeur()];
+        
+    }
       /**
      * Cette méthode retourne l'ensemble de choix.
      * @return 
@@ -92,16 +101,14 @@ public class Partie extends Observable implements Serializable{
     public Gain getGain() {
         return gain;
     }
-    
-    
 
-   /* @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    /* @param args the command line arguments
+      */
+     public static void main(String[] args) {
+         // TODO code application logic here
+     }
 
-    }
+   }
 
    
     
