@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package V;
+package View;
 
-import M.Coup;
+import Model.Coup;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import M.Joueur;
-import M.Partie;
+import Model.Joueur;
+import Model.Partie;
 
 /**
  *

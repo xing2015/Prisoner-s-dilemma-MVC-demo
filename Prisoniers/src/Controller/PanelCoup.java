@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package C;
+package Controller;
 
-import M.Partie;
+import Model.Partie;
 
 
 /**
@@ -69,14 +69,14 @@ public class PanelCoup extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("C/D");
+        jButton2.setText("Controller/D");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("C/C");
+        jButton1.setText("Controller/C");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

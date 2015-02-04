@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package V;
+package View;
 
-import M.Joueur;
-import M.Partie;
+import Model.Joueur;
+import Model.Partie;
 import java.util.Observable;
 import java.util.Observer;
 

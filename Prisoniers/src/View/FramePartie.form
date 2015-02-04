@@ -61,10 +61,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="panelCoup1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="panelCoup1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
                       <Component id="panelSynthese1" min="-2" max="-2" attributes="0"/>
@@ -94,11 +91,11 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="C.PanelCoup" name="panelCoup1">
+    <Component class="Controller.PanelCoup" name="panelCoup1">
     </Component>
-    <Component class="V.PanelSynthese" name="panelSynthese1">
+    <Component class="View.PanelSynthese" name="panelSynthese1">
     </Component>
-    <Component class="V.PanelHistorique" name="panelHistorique1">
+    <Component class="View.PanelHistorique" name="panelHistorique1">
     </Component>
   </SubComponents>
 </Form>

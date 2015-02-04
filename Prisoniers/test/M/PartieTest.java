@@ -6,12 +6,13 @@
 
 package M;
 
+import Model.Partie;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Administrator
+ * @author xym
  */
 public class PartieTest {
     Partie p;

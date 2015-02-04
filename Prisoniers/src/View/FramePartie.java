@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package V;
+package View;
 
-import C.PanelCoup;
-import M.Partie;
+import Controller.PanelCoup;
+import Model.Partie;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -49,9 +49,9 @@ public class FramePartie extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelCoup1 = new C.PanelCoup();
-        panelSynthese1 = new V.PanelSynthese();
-        panelHistorique1 = new V.PanelHistorique();
+        panelCoup1 = new Controller.PanelCoup();
+        panelSynthese1 = new View.PanelSynthese();
+        panelHistorique1 = new View.PanelHistorique();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuOpen = new javax.swing.JMenuItem();
@@ -125,7 +125,8 @@ public class FramePartie extends javax.swing.JFrame{
         open.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int returnVal = open.showSaveDialog(null);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            String filePath = open.getSelectedFile().getPath() + "\\game.txt";
+             
+            String filePath = open.getSelectedFile().getPath() + "\\Game"+System.currentTimeMillis()+".dat";
             try {
                 FileOutputStream fileOs = new FileOutputStream(filePath);
                 ObjectOutputStream objectOs = new ObjectOutputStream(fileOs);
@@ -149,8 +150,8 @@ public class FramePartie extends javax.swing.JFrame{
             try {
                 FileInputStream fileIn= new FileInputStream(filePath);
                 ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-                Partie instance = (Partie) objectIn.readObject();
-                partie = (Partie) objectIn.readObject();
+                //Partie instance = (Partie)objectIn.readObject();
+                this.partie = (Partie)objectIn.readObject();// recovery of the objet partie
                 setPartie(partie);
                 objectIn.close();
             } catch (FileNotFoundException ex) {
@@ -207,8 +208,8 @@ public class FramePartie extends javax.swing.JFrame{
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuOpen;
     private javax.swing.JMenuItem jMenuSave;
-    private C.PanelCoup panelCoup1;
-    private V.PanelHistorique panelHistorique1;
-    private V.PanelSynthese panelSynthese1;
+    private Controller.PanelCoup panelCoup1;
+    private View.PanelHistorique panelHistorique1;
+    private View.PanelSynthese panelSynthese1;
     // End of variables declaration//GEN-END:variables
 }
