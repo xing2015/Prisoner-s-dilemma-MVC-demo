@@ -17,9 +17,7 @@ public class PartieTest {
     Partie p;
     
     public PartieTest() {
-        assertEquals(0,p.NbCoup);
-        assertEquals(0,p.ScoreA);
-        assertEquals(0,p.ScoreB);
+        
     }
 
     /**
@@ -34,7 +32,7 @@ public class PartieTest {
         fail("The test case is a prototype.");
     }
     
-    public void testCooperer(){
+  /*  public void testCooperer(){
         p = new Partie();
         assertEquals(0,p.GetNbCoup());
         p.Cooperer(true,true);
@@ -64,7 +62,7 @@ public class PartieTest {
           assertEquals(9,p.ScoreA);
           assertEquals(9,p.ScoreB);
         
-    }
+    }*/
     
     public void testAcooperer(){
         

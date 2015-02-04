@@ -59,14 +59,14 @@ public class Partie extends Observable implements Serializable{
     }
       /**
      * Cette méthode retourne le nombre de coup.
-     * @return 
+     @return 
      */
     public int GetNbCoup() {
         return Choix.size();
     }
     /**
      * Cette méthode retourne le score pour joueur j.
-     * @param j: joueur
+     * joueur @param j: 
      * @return 
      */
     public int getScore(Joueur j){
@@ -79,8 +79,8 @@ public class Partie extends Observable implements Serializable{
     
         /**
      * Cette méthode retourne le choix d'un joueur au coup numéro i.
-     * @param joueur: joueur
-     * @param i:numéro de coup
+     * joueur @param joueur: 
+     * numéro de coup @param i
      * @return 
      */
     public boolean getChoixCoup(Joueur joueur, int coup) {
@@ -89,7 +89,7 @@ public class Partie extends Observable implements Serializable{
     }
       /**
      * Cette méthode retourne l'ensemble de choix.
-     * @return 
+      @return 
      */
     public List<boolean[]> getChoix() {
         return Choix;
