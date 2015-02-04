@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 /**  Tester  la serialisation de Partie
     
  *
- * @author XING Yuming
+ * @author Yuming
  */
 public class SerializationTest {
      private Partie partie;
