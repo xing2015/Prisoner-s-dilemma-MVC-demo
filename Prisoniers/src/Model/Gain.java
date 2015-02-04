@@ -7,7 +7,7 @@ package Model;
 
 import java.io.Serializable;
 
-/**
+/**Cette classe definie les règles de gains et calcule les gains selon ces règles.
  *
  * @author xym
  */
@@ -21,12 +21,11 @@ public class Gain implements Serializable{
     public Gain() {
         this(0, 1, 3, 5);
     }
-    /**
-     * Cette classe defini les règles de gains et calcule les gains selon ces règles.
-     * @param d: le gain de dupe.
-     * @param p: le gain de punition.
-     * @param r: le gain de recompense.
-     * @param t: le gain de tentation.
+    /** constucteur
+     * @param d: le gain de dupe = 0.
+     * @param p: le gain de punition = 1.
+     * @param r: le gain de recompense = 1.
+     * @param t: le gain de tentation = 5.
      */
     public Gain(int d, int p, int r, int t) {
         this.dupe = d;
@@ -64,23 +63,5 @@ public class Gain implements Serializable{
         return resultat;
 
     }
-    /**
-     * Cette méthode justifi si les nouveaux règles de gains satisfait une condition invariante.
-     * @param d: le gain de dupe.
-     * @param p: le gain de punition.
-     * @param r: le gain de recompense.
-     * @param t: le gain de tentation.
-     * @return: Si la condition est satisfaite, il retourne True. Sinon False.
-     */
-    public boolean invariantOk(int d, int p, int r, int t) {
-        return d < p && p < r && r < t && ((t + d) / 2) < r;
-    }
-    /**
-     * Cette méthode redefini les règles de gains.
-     * @param d: le nouveau gain de dupe.
-     * @param p: le nouveau gain de punition.
-     * @param r: le nouveau gain de recompense.
-     * @param t: le nouveau gain de tentation.
-     */
   
 }

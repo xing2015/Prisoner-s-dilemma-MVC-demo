@@ -17,13 +17,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 
-/**
+/**Cette classe crée la fenetre de jeu, il comprends panel de prochaine coup,panel synthese et panel historique.
  *
- * @author xym
+ * @author Yuming
  */
 public class FramePartie extends javax.swing.JFrame{
      Partie partie;
-    /**
+    /** Constructeur, initialisation.
      * Creates new form FramePartie
      */
     public FramePartie() {
@@ -31,7 +31,10 @@ public class FramePartie extends javax.swing.JFrame{
         initComponents();
         this.setPartie(partie);
     }
-    
+    /** Cette méthode lance le partie.
+     * Creates new form FramePartie
+     * @param p: partie
+     */
     public void setPartie(Partie p){
         panelCoup1.setPartie(p);
         panelSynthese1.setPartie(p);
@@ -118,6 +121,9 @@ public class FramePartie extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**Sérilization, cette méthode sauvgarde le jeu dans un fichier en type ".dat"
+     * 
+     */
     private void jMenuSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSaveActionPerformed
 
         // TODO add your handling code here:
@@ -141,6 +147,9 @@ public class FramePartie extends javax.swing.JFrame{
         }
     }//GEN-LAST:event_jMenuSaveActionPerformed
 
+    /** Déserilization, cette méthode lis une fichier ".dat", pour relancer un jeu existant.
+     
+     */
     private void jMenuLoadActionPerformed1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuLoadActionPerformed1
         // TODO add your handling code here:
          JFileChooser load = new JFileChooser();

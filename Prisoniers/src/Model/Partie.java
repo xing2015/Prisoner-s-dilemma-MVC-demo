@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Observable;
 
 /**
+ * Cette classe enregistre les choix de deux joueurs par coup et gére leurs
+ * gains.
  *
  * @author xym
  */
@@ -33,8 +35,10 @@ public class Partie extends Observable implements Serializable {
     /**
      * Cette méthode enregistre les choix de deux joueurs.
      *
-     * choix de joueur A de quel coup. @param ChoixA: 
-     * choix de joueur B de quel coup. @param ChoixB:
+     * @param ChoixA choix de joueur A
+     * @param ChoixB choix de joueur B
+     * @param ChoixA : choix de joueur A de quel coup.
+     * @param ChoixB :choix de joueur B de quel coup.
      */
     public void Cooperer(boolean ChoixA, boolean ChoixB) {
 
@@ -49,9 +53,10 @@ public class Partie extends Observable implements Serializable {
 
     /**
      * Cette méthode retourne le gain pour joueur j au coup numéro coup. joueur
-     * @param j numéro de coup @param coup
      *
-     * @return gainTmp: gain
+     * @param j: numéro de coup @param coup
+     * @param coup: nombre de coup gain @return gainTmp
+     * @return int
      */
     public int getGainParCoup(Joueur j, int coup) {
         int gainTmp = gain.calcul(j, Choix.get(coup)[0], Choix.get(coup)[1]);
@@ -61,16 +66,19 @@ public class Partie extends Observable implements Serializable {
     /**
      * Cette méthode retourne le nombre de coup.
      *
-     * @return
+     * la taille de valable choix @return
+     *
+     * @return la taille de variable Choix
      */
     public int GetNbCoup() {
         return Choix.size();
     }
 
     /**
-     * Cette méthode retourne le score pour joueur j. joueur @param j:
+     * Cette méthode retourne le score pour joueur j.
      *
-     * @return
+     * @param j: joueur
+     * @return score
      */
     public int getScore(Joueur j) {
         int score = 0;
@@ -82,9 +90,11 @@ public class Partie extends Observable implements Serializable {
 
     /**
      * Cette méthode retourne le choix d'un joueur au coup numéro i. joueur
-     * @param joueur: numéro de coup @param i
      *
-     * @return
+     * @param coup: numéro de coup
+     * @param joueur：joueur
+     *
+     * @return boolean
      */
     public boolean getChoixCoup(Joueur joueur, int coup) {
         return Choix.get(coup)[joueur.getValeur()];
@@ -95,6 +105,8 @@ public class Partie extends Observable implements Serializable {
      * Cette méthode retourne l'ensemble de choix.
      *
      * choix de joueur @return Choix
+     *
+     * @return boolean
      */
     public List<boolean[]> getChoix() {
         return Choix;

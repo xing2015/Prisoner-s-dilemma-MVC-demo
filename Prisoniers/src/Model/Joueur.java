@@ -4,23 +4,26 @@
  * and open the template in the editor.
  */
 package Model;
+
 /**
- *
- * @author XYM
+ * Cette classe defini les joueurs.
+ * @author XING Yuming
  */
 public enum Joueur {
-  
-    A(0),B(1);
+    A(0), B(1);
     private int valeur;
+
     /**
-     * Cette classe defini les joueurs.
-     * @param valeur: la valeur contenu par joueur. 
+     * Cette méthode definit les 2 joueurs en classe énum.
+     *
+     * @param valeur: la valeur contenu par joueur.
      */
-    private Joueur(int valeur){
-        this.valeur=valeur;
+    private Joueur(int valeur) {
+        this.valeur = valeur;
     }
-    public int getValeur(){
+
+    public int getValeur() {
         return valeur;
     }
-    
+
 }

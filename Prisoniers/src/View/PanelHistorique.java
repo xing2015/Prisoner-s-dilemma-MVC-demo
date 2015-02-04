@@ -20,8 +20,10 @@ import Model.Joueur;
 import Model.Partie;
 
 /**
+ * Classe de panel d'Hitorique,pour afficher les historique de jeu ,elle
+ * implemente un observeur.
  *
- * @author xym
+ * @author XING Yuming
  */
 public class PanelHistorique extends JPanel implements Observer {
 
@@ -46,8 +48,8 @@ public class PanelHistorique extends JPanel implements Observer {
     /**
      * Cette méthode met à jour les historiques.
      *
-     * @param o
-     * @param arg
+     * @param o type observable
+     * @param arg type objet
      */
     @Override
     public void update(Observable o, Object arg) {
@@ -65,7 +67,6 @@ public class PanelHistorique extends JPanel implements Observer {
     }
 
     /**
-     *
      * Cette classe privée crée le tableau de historiques. Les historiques de
      * chaque coup sont affichés dans ce tableau.
      */
@@ -89,10 +90,13 @@ public class PanelHistorique extends JPanel implements Observer {
             return entetes.length;
         }
 
+        @Override
         public String getColumnName(int columnIndex) {
             return entetes[columnIndex];
         }
 
+        /** Inserer les valeur dans la table.
+         */
         public Object getValueAt(int rowIndex, int columnIndex) {
             switch (columnIndex) {
                 case 0:
@@ -118,10 +122,8 @@ public class PanelHistorique extends JPanel implements Observer {
 
     }
 
-    public Partie getPartie() {
-        return partie;
-    }
-
+    /** Lancer une partie      
+     */
     public void setPartie(Partie partie) {
         this.partie = partie;
         partie.addObserver(this);
